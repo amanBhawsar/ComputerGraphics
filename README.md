@@ -1,2 +1,2 @@
 # ComputerGraphics
-![alt text](https://github.com/amanBhawsar/ComputerGraphics/questions.jpeg)
+![alt text](https://github.com/amanBhawsar/ComputerGraphics/blob/master/questions.jpeg)
