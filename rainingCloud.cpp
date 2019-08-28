@@ -54,18 +54,6 @@ int main(){
         delay(100);
         cleardevice();
     }
-
-    /*
-    while(1){
-        fillellipse(x-10, y-300, 100, 80);
-        fillellipse(x+70, y-300, 100, 80);
-        fillellipse(x+130, y-300, 100, 80);
-        for(int j=0;j<100;j++){
-            settextstyle(0,1,1);
-            outtextxy(x+rand()%130,y-290+j+rand(),"O");
-        }
-
-    }   */
     getch();
     closegraph();
     return 0;
