@@ -52,13 +52,13 @@ void poly::read(){
 void poly::calcs(){
     for(int i=0;i<v;i++){
         if(xmin>p[i].x)
-        xmin=p[i].x;
+            xmin=p[i].x;
         if(xmax<p[i].x)
-        xmax=p[i].x;
+            xmax=p[i].x;
         if(ymin>p[i].y)
-        ymin=p[i].y;
+            ymin=p[i].y;
         if(ymax<p[i].y)
-        ymax=p[i].y;
+            ymax=p[i].y;
     }
 }
 
@@ -66,21 +66,18 @@ void poly::display(){
     int ch1;
     char ch='y';
     float s,s2;
-    do
-    {
+    do{
         cout<<"\n\nMENU:";
         cout<<"\n\n\t1 . Scan line Fill ";
         cout<<"\n\n\t2 . Exit ";
         cout<<"\n\nEnter your choice:";
         cin>>ch1;
-        switch(ch1)
-        {
+        switch(ch1){
             case 1:
                 s=ymin+0.01;
                 delay(100);
                 cleardevice();
-                while(s<=ymax)
-                {
+                while(s<=ymax){
                     ints(s);
                     sort(s);
                     s++;
@@ -95,18 +92,15 @@ void poly::display(){
     }while(ch=='y' || ch=='Y');
 }
 
-void poly::ints(float z) //DEFINE FUNCTION INTS
-{
+void poly::ints(float z){
     int x1,x2,y1,y2,temp;
     c=0;
-    for(int i=0;i<v;i++)
-    {
+    for(int i=0;i<v;i++){
         x1=p[i].x;
         y1=p[i].y;
         x2=p[i+1].x;
         y2=p[i+1].y;
-        if(y2<y1)
-        {
+        if(y2<y1){
             temp=x1;
             x1=x2;
             x2=temp;
@@ -114,17 +108,15 @@ void poly::ints(float z) //DEFINE FUNCTION INTS
             y1=y2;
             y2=temp;
         }
-        if(z<=y2&&z>=y1)
-        {
+        if(z<=y2&&z>=y1){
             if((y1-y2)==0)
-            x=x1;
-            else // used to make changes in x. so that we can fill our polygon after cerain distance
-            {
+                x=x1;
+            else{
                 x=((x2-x1)*(z-y1))/(y2-y1);
                 x=x+x1;
             }
             if(x<=xmax && x>=xmin)
-            inter[c++]=x;
+                inter[c++]=x;
         }
     }
 }
